@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Clientes de Playa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fondo">
+
+<header>
+  <h1>🌊 Registro Clientes de Playa</h1>
+  <p id="bienvenida"></p>
+
+  <button id="btnCerrar" onclick="cerrarSesion()" style="display:none;">
+    🚪 Cerrar Sesión
+  </button>
+</header>
+
+<div class="panel">
+
+  <!-- BUSCADOR -->
+  <div class="caja">
+    <h2>🔍 Buscar Cliente</h2>
+    <input id="buscar" placeholder="Escribe el nombre..." onkeyup="buscarCliente()">
+    <div id="resultadoBusqueda"></div>
+  </div>
+
+  <!-- LISTA CLIENTES -->
+  <div class="caja">
+    <h2>📋 Clientes Registrados</h2>
+    <div id="listaClientes"></div>
+  </div>
+
+  <!-- REGISTRO SOLO PERSONAL -->
+  <div class="caja" id="zonaRegistro" style="display:none;">
+    <h2>➕ Registrar Cliente (Personal)</h2>
+
+    <input id="nombre" placeholder="Nombre">
+    <input id="dni" placeholder="DNI">
+    <input id="numero" placeholder="Número celular">
+
+    <select id="distritoSelect" onchange="actualizarPlayas()"></select>
+    <select id="playaSelect"></select>
+
+    <input id="ubicacion" placeholder="Dirección exacta">
+
+    <button onclick="registrarCliente()">✅ Guardar Cliente</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
